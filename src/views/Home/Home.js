@@ -23,6 +23,9 @@ const randomId = Math.floor(Math.random() *1000);
  
 }
 setTaskList([...taskList, obj]);
+setTitle ("")
+setDescription("")
+setPriority("")
 }
 
   return (
