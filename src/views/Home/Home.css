@@ -1,3 +1,21 @@
 .container {
-    
+  padding: 10px;
+  margin: 0;
+}
+.app-title {
+  text-align: center;
+  background-color: #b380ff;
+  padding: 10px 50px;
+  display: block;
+  margin: 10px auto;
+  border-radius:20px;
+
+}
+.todo-flex-container{
+    display: flex;
+    justify-content: space-around;
+
+}
+.text-center{
+    text-align: center;
 }
