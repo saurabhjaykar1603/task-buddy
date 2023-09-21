@@ -10,7 +10,7 @@ const Footer = () => {
             <p className="footer-text-p">To Do App || Created By @Saurabh Jaykar</p>
           </div>
           <div className="footer-github-link">
-           <span>See on Github 👉🏻</span> <a href="https://github.com/saurabhjaykar1603/todo-app" type="blank">https://github.com/saurabhjaykar1603/todo-app</a>
+            <a href="https://github.com/saurabhjaykar1603/todo-app" type="blank"> <i class="fa-brands fa-github"></i></a>
           </div>
         </div>
       </div>

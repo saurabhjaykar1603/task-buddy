@@ -14,7 +14,12 @@
     text-align: center;
 
 }
-.footer-github-link a, span{
-    color: white;
-    text-description: "none"
+.footer-github-link a{
+    color: black;
+    text-description: "none" !important;
+    background-color: #fff;
+    padding: 6px;
+    font-size: 25px;
+    border-radius: 5px;
+
 }
