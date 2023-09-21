@@ -35,7 +35,7 @@ setPriority("")
       </div>
       <div className="todo-flex-container">
         <div>
-          <h1 className="text-center">Show List  <i class="fa-solid fa-list"></i></h1>
+          <h1 className="text-center">Show List  <i className="fa-solid fa-list"></i></h1>
           {taskList.map((taskItem, index) => {
             const { id, title, description, priority } = taskItem;
 
@@ -45,13 +45,14 @@ setPriority("")
                 title={title}
                 description={description}
                 priority={priority}
+                key={index}
               />
             );
           })}
         </div>
 
         <div>
-          <h1 className="text-center">Add List <i class="fa-solid fa-plus"></i></h1>
+          <h1 className="text-center">Add List <i className="fa-solid fa-plus"></i></h1>
           <div className="add-task-container">
             <form action="">
              
