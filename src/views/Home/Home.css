@@ -1,20 +1,25 @@
+body{
+  background-color: #D9F0FF !important;
+
+}
+
 .container {
   padding: 10px;
   margin: 0;
 }
 .app-title {
   text-align: center;
-  background-color: #b380ff;
-  padding: 10px 50px;
+  background-color: #8ad0ff;
+  padding: 15px 50px;
   display: block;
   margin: 10px auto;
-  border-radius:20px;
+  border-radius: 10px;
+  width: 300px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 
 }
-.todo-flex-container{
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-
+.todo-flex-container {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
 }
-

@@ -31,7 +31,7 @@ setPriority("")
   return (
     <>
       <div className="container">
-        <h1 className="app-title">Task Buddy</h1>
+        <h1 className="app-title">🎯 Task Buddy 🎯</h1>
       </div>
       <div className="todo-flex-container">
         <div>
