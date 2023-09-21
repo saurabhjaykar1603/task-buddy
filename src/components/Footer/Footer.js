@@ -7,11 +7,9 @@ const Footer = () => {
       <div className="footer-container">
         <div className="footer-body">
           <div className="footer-text">
-            <p className="footer-text-p">To Do App || Created By @Saurabh Jaykar</p>
+            <p className="footer-github-link"> <a href="https://github.com/saurabhjaykar1603/todo-app">Created By @Saurabh Jaykar <i class="fa-brands fa-github"></i></a>  </p>
           </div>
-          <div className="footer-github-link">
-            <a href="https://github.com/saurabhjaykar1603/todo-app" type="blank"> <i class="fa-brands fa-github"></i></a>
-          </div>
+         
         </div>
       </div>
     </>
