@@ -10,8 +10,7 @@ const Task = ({ id, title, description, priority, removeTaskFromList, obj}) => {
         <p className=" task-description ">{description}</p>
         <span className="task-priority">🎯 {priority}</span>
         <img src={deletTaskImg} alt="Delet task"className="task-delet-icon" onClick={()=>{
-          removeTaskFromList(obj)
-          console.log(obj)
+          removeTaskFromList(id)
         }}/>
 
       </div>
