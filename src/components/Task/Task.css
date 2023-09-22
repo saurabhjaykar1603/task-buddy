@@ -47,19 +47,25 @@
   background-color: #0099ff;
   color: white;
   border-radius: 25px 25px 25px 25px;
-  padding: 15px 30px;
-  display: block !important;
-  margin: 20px auto !important;
+  padding: 15px 10px !important;
+  /* display: block !important; */
   font-size: 16px;
   font-weight: bold;
   border: none !important;
   cursor: pointer;
   outline: none;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  width: 160px !important; 
 }
 .btn-add-task:hover {
   background-color: #0092cc;
   border: none;
+}
+.btn-container{
+  margin-bottom:20px ;
+
+  display: flex;
+  justify-content: space-between;
 }
 .task-delet-icon {
   position: absolute;

@@ -15,8 +15,8 @@ function Home() {
 
   useEffect(() => {
     const list = JSON.parse(localStorage.getItem("taskbuddy"));
-    if(list && list.length>=0){
-      setDescription(list)
+    if (list && list.length >= 0) {
+      setDescription(list);
     }
   }, []);
 
@@ -117,13 +117,22 @@ function Home() {
                 placeholder="Enter Priority Here"
                 className="task-input"
               />
-              <button
-                type="button"
-                className="btn-add-task"
-                onClick={addTaskToLink}
-              >
-                Add Task to List
-              </button>
+              <div className="btn-container">
+                <button
+                  type="button"
+                  className="btn-add-task"
+                  onClick={addTaskToLink}
+                >
+                  Add Task to List
+                </button>
+                <button
+                  type="button"
+                  className="btn-add-task"
+                  onClick={addTaskToLink}
+                >
+                  Update Task
+                </button>
+              </div>
             </form>
           </div>
         </div>
