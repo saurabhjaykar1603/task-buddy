@@ -65,7 +65,7 @@ function Home() {
     saveTaskTolocalStorage(tempArray);
   };
 
-  // Edit Task Button
+  // Edit/Update Task Button
 
   const setTaskEditable = (id) => {
     setIsEdit(true);
@@ -104,6 +104,8 @@ function Home() {
     }
 
     setTaskList([...tempArray]);
+
+  saveTaskTolocalStorage(tempArray)
 
     setId(0);
     setTitle("");
