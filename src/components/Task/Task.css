@@ -1,6 +1,7 @@
 .task-container {
   min-width: 400px;
   background-color: #fff;
+  height: 70px;
 
   margin: 10px;
   padding: 10px;
@@ -10,12 +11,11 @@
   position: relative;
 }
 .task-title {
-  margin: 2px ;
+  margin: 2px;
   font-weight: bold;
-  
 }
 .task-description {
-  margin: 2px ;
+  margin: 2px;
 }
 .task-priority {
   position: absolute;
@@ -23,44 +23,52 @@
   top: 0;
   background-color: #0099ff;
   color: #fff;
-  border-radius: 0 10px 0 0 ;
-  padding:  4px;
+  border-radius: 0 10px 0 0;
+  padding: 4px;
   width: 80px;
   text-align: center;
   font-weight: bold;
 }
-.task-input{
-    display: block;
-    width: 300px;
-    font-size:18px;
-    border: 1px solid #0099ff;
-    border-radius: 10px;
-    padding: 20px 10px;
-    margin: 30px 10px;
-    /* border: none ; */
+.task-input {
+  display: block;
+  width: 300px;
+  font-size: 18px;
+  border: 1px solid #0099ff;
+  border-radius: 10px;
+  padding: 20px 10px;
+  margin: 30px 10px;
+  /* border: none ; */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-
 }
-::placeholder{
-  color: #0092CC;
+::placeholder {
+  color: #0092cc;
 }
-.btn-add-task{
-    background-color: #0099ff;;
-    color: white;
-    border-radius: 25px 25px 25px 25px;
-    padding:15px 30px;
-    display: block !important;
-    margin: 20px auto !important;
-    font-size: 16px;
-    font-weight: bold;
-    border: none !important;
-    cursor: pointer;
-    outline: none;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-
+.btn-add-task {
+  background-color: #0099ff;
+  color: white;
+  border-radius: 25px 25px 25px 25px;
+  padding: 15px 30px;
+  display: block !important;
+  margin: 20px auto !important;
+  font-size: 16px;
+  font-weight: bold;
+  border: none !important;
+  cursor: pointer;
+  outline: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
-.btn-add-task:hover{
-  background-color: #0092CC;
+.btn-add-task:hover {
+  background-color: #0092cc;
   border: none;
-  
+}
+.task-delet-icon {
+  position: absolute;
+  right: 5px;
+  bottom: 5px;
+  height: 25px;
+  border-radius: 50%;
+  border: 2px solid #0099ff;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+
 }
