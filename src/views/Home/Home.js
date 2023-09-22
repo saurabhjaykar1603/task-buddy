@@ -85,6 +85,35 @@ function Home() {
     setPriority(currentEditTask.priority);
   };
 
+  const updateTask = (task) => {
+    let indexToUpdate ;
+
+    taskList.forEach((task , i) =>{
+      if(task.id === id){
+        indexToUpdate = i;
+      }
+    })
+
+    const tempArray = taskList;
+    tempArray[indexToUpdate]= 
+    {
+      id: id,
+      title:title,
+      description:description,
+      priority:priority
+    }
+
+    setTaskList([...tempArray]);
+
+    setId(0);
+    setTitle("");
+    setDescription("");
+    setPriority("");
+    setIsEdit(false);
+
+
+  };
+
   return (
     <>
       <div className="container">
@@ -145,7 +174,7 @@ function Home() {
                   <button
                     type="button"
                     className="btn-add-task"
-                    onClick={addTaskToLink}
+                    onClick={updateTask}
                   >
                     Update
                   </button>
