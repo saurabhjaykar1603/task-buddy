@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Home.css";
 import Task from "../../components/Task/Task";
 
@@ -11,6 +11,22 @@ function Home() {
   const [description, setDescription] = useState("");
   const [priority, setPriority] = useState("");
 
+  // Load List From localStorage
+
+  useEffect(() => {
+    const list = JSON.parse(localStorage.getItem("taskbuddy"));
+    setTaskList(list);
+  }, []);
+
+  const saveListLocalStorage = () => {
+    localStorage.getItem("taskbuddy");
+  };
+
+  // Save Task to Local Storage
+  const saveTaskTolocalStorage = (tasks) => {
+    localStorage.setItem("taskbuddy", JSON.stringify(tasks));
+  };
+
   // add task btn
   const addTaskToLink = () => {
     const randomId = Math.floor(Math.random() * 1000);
@@ -21,10 +37,15 @@ function Home() {
       description: description,
       priority: priority,
     };
-    setTaskList([...taskList, obj]);
+    const newTaskList = [...taskList, obj];
+
+    setTaskList(newTaskList);
+
     setTitle("");
     setDescription("");
     setPriority("");
+
+    saveTaskTolocalStorage(newTaskList);
   };
 
   // Delete Task Button
