@@ -16,9 +16,10 @@ function Home() {
   useEffect(() => {
     const list = JSON.parse(localStorage.getItem("taskbuddy"));
     if (list && list.length >= 0) {
-      setDescription(list);
+      setTaskList(list);
     }
   }, []);
+
 
   // Save Task to Local Storage
   const saveTaskTolocalStorage = (tasks) => {
