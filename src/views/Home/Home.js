@@ -18,10 +18,6 @@ function Home() {
     setTaskList(list);
   }, []);
 
-  const saveListLocalStorage = () => {
-    localStorage.getItem("taskbuddy");
-  };
-
   // Save Task to Local Storage
   const saveTaskTolocalStorage = (tasks) => {
     localStorage.setItem("taskbuddy", JSON.stringify(tasks));
@@ -62,6 +58,7 @@ function Home() {
     tempArray.splice(index, 1);
 
     setTaskList([...tempArray]);
+    saveTaskTolocalStorage(tempArray);
   };
 
   return (
