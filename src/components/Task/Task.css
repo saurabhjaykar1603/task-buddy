@@ -55,26 +55,33 @@
   cursor: pointer;
   outline: none;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  width: 160px !important; 
+  width: 160px !important;
 }
 .btn-add-task:hover {
   background-color: #0092cc;
   border: none;
 }
-.btn-container{
-  margin-bottom:20px ;
+.btn-container {
+  margin-bottom: 20px;
 
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
 }
 .task-delet-icon {
   position: absolute;
   right: 5px;
   bottom: 5px;
-  height: 25px;
+  height: 21px;
   border-radius: 50%;
   border: 2px solid #0099ff;
   cursor: pointer;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
 
+.task-edit-icon {
+  position: absolute;
+  right: 47px;
+  bottom: 5px;
+  cursor: pointer;
+  font-size: 21px;
 }

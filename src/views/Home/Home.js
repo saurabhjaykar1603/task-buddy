@@ -7,9 +7,11 @@ function Home() {
     { id: 1, title: "Task 1", description: "description 1 ", priority: "high" },
   ]);
 
+  const [id, setId] = useState(0);
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [priority, setPriority] = useState("");
+  const [isEdit, setIsEdit] = useState(false);
 
   // Load List From localStorage
 
@@ -19,7 +21,6 @@ function Home() {
       setTaskList(list);
     }
   }, []);
-
 
   // Save Task to Local Storage
   const saveTaskTolocalStorage = (tasks) => {
@@ -64,6 +65,26 @@ function Home() {
     saveTaskTolocalStorage(tempArray);
   };
 
+  // Edit Task Button
+
+  const setTaskEditable = (id) => {
+    setIsEdit(true);
+    setId(id);
+    let currentEditTask;
+
+    taskList.forEach((task, i) => {
+      if (task.id === id) {
+        currentEditTask = task;
+      }
+    });
+    console.log(currentEditTask);
+
+    // set tASK TO EDIT
+    setTitle(currentEditTask.title);
+    setDescription(currentEditTask.description);
+    setPriority(currentEditTask.priority);
+  };
+
   return (
     <>
       <div className="container">
@@ -86,6 +107,7 @@ function Home() {
                 key={index}
                 removeTaskFromList={removeTaskFromList}
                 object={taskItem}
+                setTaskEditable={setTaskEditable}
               />
             );
           })}
@@ -93,7 +115,7 @@ function Home() {
 
         <div>
           <h1 className="text-center">
-            Add List <i className="fa-solid fa-plus"></i>
+            {isEdit ? `Update Task ${id}` : "Add Task"}
           </h1>
           <div className="add-task-container">
             <form action="">
@@ -119,20 +141,23 @@ function Home() {
                 className="task-input"
               />
               <div className="btn-container">
-                <button
-                  type="button"
-                  className="btn-add-task"
-                  onClick={addTaskToLink}
-                >
-                  Add Task to List
-                </button>
-                <button
-                  type="button"
-                  className="btn-add-task"
-                  onClick={addTaskToLink}
-                >
-                  Update Task
-                </button>
+                {isEdit ? (
+                  <button
+                    type="button"
+                    className="btn-add-task"
+                    onClick={addTaskToLink}
+                  >
+                    Update
+                  </button>
+                ) : (
+                  <button
+                    type="button"
+                    className="btn-add-task"
+                    onClick={addTaskToLink}
+                  >
+                    Add
+                  </button>
+                )}
               </div>
             </form>
           </div>
