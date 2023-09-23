@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./Home.css";
 import Task from "../../components/Task/Task";
-
+import showToast from "crunchy-toast";
 function Home() {
   const [taskList, setTaskList] = useState([
     { id: 1, title: "Task 1", description: "description 1 ", priority: "high" },
@@ -66,6 +66,9 @@ function Home() {
     clearInputFields();
 
     saveTaskTolocalStorage(newTaskList);
+
+    // crunchy-tost lab
+    showToast("Task Added Succesfully", "success", 3000);
   };
 
   // Delete Task Button
@@ -83,6 +86,9 @@ function Home() {
 
     setTaskList([...tempArray]);
     saveTaskTolocalStorage(tempArray);
+
+    // crunchy-toast
+    showToast("Task Deleted successfully !", "error", 2000);
   };
 
   // Edit/Update Task Button
@@ -99,7 +105,7 @@ function Home() {
     });
     console.log(currentEditTask);
 
-    // set tASK TO EDIT
+    // set tASK TO EDIT/update
     setTitle(currentEditTask.title);
     setDescription(currentEditTask.description);
     setPriority(currentEditTask.priority);
@@ -128,6 +134,9 @@ function Home() {
 
     clearInputFields();
     setIsEdit(false);
+
+    // crunchy-toast
+    showToast("Task Updated successfully !", "info", 3000);
   };
 
   return (
