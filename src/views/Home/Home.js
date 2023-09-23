@@ -17,39 +17,12 @@ function Home() {
 
   // clear input all
   const clearInputFields = () => {
-    setId(0);
     setTitle("");
     setDescription("");
     setPriority("");
   };
 
-  // find task by id func code
-  const findTaskIndexById = (taskId) => {
-    let index;
-    taskList.forEach((task, i) => {
-      if (task.id === taskId) {
-        index = i;
-      }
-    });
-    return index;
-  };
 
-  // Edit Task Button
-
-  // eslint-disable-next-line no-unused-vars
-  const editTask = (id) => {
-    setIsEdit(true);
-    taskList.forEach((task) => {
-      if (task.id === id) {
-        setId(task.id);
-        setTitle(task.title);
-        setDescription(task.description);
-        setPriority(task.priority);
-      }
-    });
-  };
-
-  // Load List From localStorage
 
   useEffect(() => {
     const list = JSON.parse(localStorage.getItem("taskbuddy"));
@@ -57,6 +30,18 @@ function Home() {
       setTaskList(list);
     }
   }, []);
+
+    // find task by id func code
+    const findTaskIndexById = (taskId) => {
+      let index;
+      taskList.forEach((task, i) => {
+        if (task.id === taskId) {
+          index = i;
+        }
+      });
+      return index;
+    };
+  
 
   // Save Task to Local Storage  // send code to util/localStorage.js
 
@@ -76,6 +61,8 @@ function Home() {
 
     clearInputFields();
 
+    setTaskList([...taskList, obj]);
+
     saveTaskTolocalStorage(newTaskList);
 
     // crunchy-tost lab
@@ -84,8 +71,7 @@ function Home() {
 
   // Delete Task Button
   const removeTaskFromList = (id) => {
-
-    const index = findTaskIndexById(id);  // to find task id
+    const index = findTaskIndexById(id); // to find task id
     const tempArray = taskList;
     tempArray.splice(index, 1);
 
@@ -99,8 +85,12 @@ function Home() {
   // Edit/Update Task Button
 
   const setTaskEditable = (id) => {
+    setIsEdit(true);
+    setId(id);
 
-   const currentEditTask = findTaskIndexById(id)  // to find task id
+    const index = findTaskIndexById(id);
+
+    const currentEditTask = taskList[index]; // to find task id
 
     // set tASK TO EDIT/update
     setTitle(currentEditTask.title);
@@ -109,8 +99,7 @@ function Home() {
   };
 
   const updateTask = (task) => {
-    
-    const indexToUpdate = findTaskIndexById(id) // to find task id
+    const indexToUpdate = findTaskIndexById(id); // to find task id
 
     const tempArray = taskList;
     tempArray[indexToUpdate] = {
