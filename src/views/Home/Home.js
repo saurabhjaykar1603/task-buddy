@@ -43,19 +43,28 @@ function Home() {
   // Save Task to Local Storage  // send code to util/localStorage.js
 
   // add task btn
-  const addTaskToLink = () => {
-    // this code for you must enter all feild to input otherwise get error
 
+  // this code for when we update any task in localStorage and fill empty string [ input] you will get error/alert
+  // or  this code for you must enter all feild to input otherwise get error
+
+  const checkRequiredField = () => {
     if (!title) {
       showToast("Title is Required", "alert", 3000);
-      return;
+      return false;
     }
     if (!description) {
       showToast("Description is Required", "alert", 3000);
-      return;
+      return false;
     }
     if (!priority) {
       showToast("Priority is Required", "alert", 3000);
+      return false;
+    }
+    return true;
+  };
+
+  const addTaskToLink = () => {
+    if (checkRequiredField() === false) {
       return;
     }
 
@@ -111,6 +120,11 @@ function Home() {
   };
 
   const updateTask = (task) => {
+    
+    if (checkRequiredField() === false) {
+      return;
+    }
+
     const indexToUpdate = findTaskIndexById(id); // to find task id
 
     const tempArray = taskList;
