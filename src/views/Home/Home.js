@@ -13,6 +13,28 @@ function Home() {
   const [priority, setPriority] = useState("");
   const [isEdit, setIsEdit] = useState(false);
 
+  // clear input all
+  const clearInputFields = () => {
+    setId(0);
+    setTitle("");
+    setDescription("");
+    setPriority("");
+  };
+
+  // Edit Task Button
+  const editTask = (id) => {
+    setIsEdit(true);
+
+    taskList.forEach((task, i) => {
+      if (task.id === id) {
+        setId(task.id);
+        setTitle(task.title);
+        setDescription(task.description);
+        setPriority(task.priority);
+      }
+    });
+  };
+
   // Load List From localStorage
 
   useEffect(() => {
@@ -41,9 +63,7 @@ function Home() {
 
     setTaskList(newTaskList);
 
-    setTitle("");
-    setDescription("");
-    setPriority("");
+    clearInputFields();
 
     saveTaskTolocalStorage(newTaskList);
   };
@@ -86,34 +106,28 @@ function Home() {
   };
 
   const updateTask = (task) => {
-    let indexToUpdate ;
+    let indexToUpdate;
 
-    taskList.forEach((task , i) =>{
-      if(task.id === id){
+    taskList.forEach((task, i) => {
+      if (task.id === id) {
         indexToUpdate = i;
       }
-    })
+    });
 
     const tempArray = taskList;
-    tempArray[indexToUpdate]= 
-    {
+    tempArray[indexToUpdate] = {
       id: id,
-      title:title,
-      description:description,
-      priority:priority
-    }
+      title: title,
+      description: description,
+      priority: priority,
+    };
 
     setTaskList([...tempArray]);
 
-  saveTaskTolocalStorage(tempArray)
+    saveTaskTolocalStorage(tempArray);
 
-    setId(0);
-    setTitle("");
-    setDescription("");
-    setPriority("");
+    clearInputFields();
     setIsEdit(false);
-
-
   };
 
   return (
