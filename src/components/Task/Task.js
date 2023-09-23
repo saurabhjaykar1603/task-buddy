@@ -8,8 +8,7 @@ const Task = ({
   description,
   priority,
   removeTaskFromList,
-  obj,
-  setTaskEditable
+  setTaskEditable,
 }) => {
   return (
     <>
@@ -25,10 +24,14 @@ const Task = ({
             removeTaskFromList(id);
           }}
         />
-        <span className="task-edit-icon" onClick={()=>{
-          setTaskEditable(id)
-        }}><i className="fa-solid fa-pen-to-square"></i></span>
-        
+        <span
+          className="task-edit-icon"
+          onClick={() => {
+            setTaskEditable(id);
+          }}
+        >
+          <i className="fa-solid fa-pen-to-square"></i>
+        </span>
       </div>
     </>
   );
