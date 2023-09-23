@@ -1,6 +1,5 @@
-body{
-  background-color: #D9F0FF !important;
-
+body {
+  background-color: #d9f0ff !important;
 }
 
 .container {
@@ -16,10 +15,16 @@ body{
   border-radius: 10px;
   width: 300px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-
 }
 .todo-flex-container {
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
+}
+.task-main-container {
+  height: 355px;
+  overflow-y: scroll;
+}
+.task-main-container::-webkit-scrollbar {
+  width: 5px;
 }

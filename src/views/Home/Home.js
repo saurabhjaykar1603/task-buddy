@@ -135,27 +135,31 @@ function Home() {
       <div className="container">
         <h1 className="app-title">🎯 Task Buddy 🎯</h1>
       </div>
+
       <div className="todo-flex-container">
         <div>
           <h1 className="text-center">
             Show List <i className="fa-solid fa-list"></i>
           </h1>
-          {taskList.map((taskItem, index) => {
-            const { id, title, description, priority } = taskItem;
+          <div className="task-main-container">
+            {" "}
+            {taskList.map((taskItem, index) => {
+              const { id, title, description, priority } = taskItem;
 
-            return (
-              <Task
-                id={id}
-                title={title}
-                description={description}
-                priority={priority}
-                key={index}
-                removeTaskFromList={removeTaskFromList}
-                object={taskItem}
-                setTaskEditable={setTaskEditable}
-              />
-            );
-          })}
+              return (
+                <Task
+                  id={id}
+                  title={title}
+                  description={description}
+                  priority={priority}
+                  key={index}
+                  removeTaskFromList={removeTaskFromList}
+                  object={taskItem}
+                  setTaskEditable={setTaskEditable}
+                />
+              );
+            })}
+          </div>
         </div>
 
         <div>
