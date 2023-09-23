@@ -44,6 +44,21 @@ function Home() {
 
   // add task btn
   const addTaskToLink = () => {
+    // this code for you must enter all feild to input otherwise get error
+
+    if (!title) {
+      showToast("Title is Required", "alert", 3000);
+      return;
+    }
+    if (!description) {
+      showToast("Description is Required", "alert", 3000);
+      return;
+    }
+    if (!priority) {
+      showToast("Priority is Required", "alert", 3000);
+      return;
+    }
+
     const randomId = Math.floor(Math.random() * 1000);
 
     const obj = {
