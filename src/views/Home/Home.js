@@ -22,8 +22,6 @@ function Home() {
     setPriority("");
   };
 
-
-
   useEffect(() => {
     const list = JSON.parse(localStorage.getItem("taskbuddy"));
     if (list && list.length >= 0) {
@@ -31,17 +29,16 @@ function Home() {
     }
   }, []);
 
-    // find task by id func code
-    const findTaskIndexById = (taskId) => {
-      let index;
-      taskList.forEach((task, i) => {
-        if (task.id === taskId) {
-          index = i;
-        }
-      });
-      return index;
-    };
-  
+  // find task by id func code
+  const findTaskIndexById = (taskId) => {
+    let index;
+    taskList.forEach((task, i) => {
+      if (task.id === taskId) {
+        index = i;
+      }
+    });
+    return index;
+  };
 
   // Save Task to Local Storage  // send code to util/localStorage.js
 
@@ -179,24 +176,17 @@ function Home() {
                 placeholder="Enter Priority Here"
                 className="task-input"
               />
+
               <div className="btn-container">
-                {isEdit ? (
-                  <button
-                    type="button"
-                    className="btn-add-task"
-                    onClick={updateTask}
-                  >
-                    Update
-                  </button>
-                ) : (
-                  <button
-                    type="button"
-                    className="btn-add-task"
-                    onClick={addTaskToLink}
-                  >
-                    Add
-                  </button>
-                )}
+                <button
+                  type="button"
+                  className="btn-add-task"
+                  onClick={() => {
+                    isEdit ? updateTask() : addTaskToLink();
+                  }}
+                >
+                  {isEdit ? "Update" : "Add"}
+                </button>
               </div>
             </form>
           </div>
